@@ -55,6 +55,8 @@ void loop() {
                   //Leave just one line uncommented depending on how the sweep start
              //     tP1toTp2();      //from High to Low
                     tP2toTp1();      //from Low to High
+
+            // Here other code to be executed without blocking
  
 }
 
