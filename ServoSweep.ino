@@ -42,6 +42,8 @@ unsigned long stageStartTime = 0; // Variable to store the start time of each st
 int currentStage = 0; // Variable to track the current stage
 int currentPosition = 0; // Variable to store current position of the servo
 
+#define DEBUG  //Uncomment for Serial debugging
+
 void setup() {
             Serial.begin(9600); // Initialize serial communication
             myServo.attach(servoPin); // 
@@ -55,6 +57,12 @@ void loop() {
                   //Leave just one line uncommented depending on how the sweep start
              //     tP1toTp2();      //from High to Low
                     tP2toTp1();      //from Low to High
+                         #ifdef DEBUG
+                          Serial.print("Stage: ");
+                          Serial.print(currentStage);
+                          Serial.print("  currentPosition: ");
+                          Serial.println(currentPosition);
+                         #endif
 
             // Here other code to be executed without blocking
  
